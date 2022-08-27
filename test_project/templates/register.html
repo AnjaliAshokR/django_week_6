@@ -1,0 +1,72 @@
+{% extends 'credentials_base.html' %}
+{% load static %}
+{% block content %}
+<section>
+  <div class="mt-4 mb-4"">
+    <div class="container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card text-white" style="border-radius: 1rem; background-color:black;" >
+            <div class="card-body p-5">
+              <h2 class="text-uppercase  ml-5 mb-5">Create an account</h2>
+              {% for message in messages %}
+              <div class="border border-danger border-4 position-center p-3" style="background-color:#f1cdbc; height:55px;">
+                <h6 class="text-dark pl-5 ml-5 ">{{message}}</h6>
+              </div>
+              {% endfor %}
+
+              <form method="post" class="mt-4 pl-0" id="signup-form">
+                {% csrf_token %}
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" >Your First Name</label>
+                  <input type="text" name="first_name" class="form-control form-control-lg" />
+
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" >Your Last Name</label>
+                  <input type="text" name="last_name" class="form-control form-control-lg" />
+
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" >Username</label>
+                  <input type="text" name="username" class="form-control form-control-lg" />
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" >Your Email</label>
+                  <input type="email" name="email" class="form-control form-control-lg" />
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" >Password</label>
+                  <input type="password" name="password" class="form-control form-control-lg" />
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" >Repeat your password</label>
+                  <input type="password" name="confirm_password" class="form-control form-control-lg" />
+
+                </div>
+
+                <div class=" justify-content-center">
+                  <input type="submit" value="Register"
+                    class="btn btn btn-outline-light btn-block btn-lg gradient-custom-7 text-body" style="background-color:black"/>
+                </div>
+
+                <p class="pl-5 text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock  %}

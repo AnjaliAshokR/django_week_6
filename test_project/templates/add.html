@@ -1,0 +1,64 @@
+{% extends 'credentials_base.html' %}
+{% load static %}
+{% block content %}
+<section>
+  <div class="mt-4 mb-4"">
+    <div class="container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card text-white" style="border-radius: 1rem; background-color:black;" >
+            <div class="card-body p-5">
+                  <h2 class="  ml-3 mb-5">Create an User</h2>
+
+                  <form method="post" class="mt-4 pl-0" id="signup-form">
+                    {% csrf_token %}
+
+                    <div class="form-outline ">
+                      <label class="form-label" >Your First Name</label>
+                      <input type="text" name="first_name" class="form-control form-control-lg" />
+
+                    </div>
+                    <div class="form-outline">
+                      <label class="form-label" >Your Last Name</label>
+                      <input type="text" name="last_name" class="form-control form-control-lg" />
+
+                    </div>
+                    <div class="form-outline">
+                      <label class="form-label" >Username</label>
+                      <input type="text" name="username" class="form-control form-control-lg" />
+
+                    </div>
+
+                    <div class="form-outline ">
+                      <label class="form-label" >Your Email</label>
+                      <input type="email" name="email" class="form-control form-control-lg" />
+
+                    </div>
+
+                    <div class="form-outline ">
+                      <label class="form-label" >Password</label>
+                      <input type="password" name="password" class="form-control form-control-lg" />
+
+                    </div>
+
+                    <div class="form-outline ">
+                      <label class="form-label" >Repeat your password</label>
+                      <input type="password" name="confirm_password" class="form-control form-control-lg" />
+
+                    </div>
+
+                    <div class=" justify-content-center mt-4 mb-5 pb-5">
+                      <input type="submit" value="Create"
+                        class="btn btn-dark btn-block btn-lg gradient-custom-7 text-body" style="background-color:black"/>
+                    </div>
+
+
+                  </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock  %}
